@@ -10,15 +10,17 @@ permissions:
 
 jobs:
   update-cv:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Download latest CV
         run: |
-          curl -L "https://docs.google.com/document/d/1zUCk-GAiq06HIciky1uWirg6wPQ4cMx35u4qQ3PEONU/export?format=pdf" -o CV.pdf
+          curl --fail --location --retry 3 \
+            "https://docs.google.com/document/d/1zUCk-GAiq06HIciky1uWirg6wPQ4cMx35u4qQ3PEONU/export?format=pdf" \
+            --output CV.pdf
 
       - name: Commit updated CV
         run: |
