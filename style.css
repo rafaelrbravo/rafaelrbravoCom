@@ -15,3 +15,9 @@ body {
 div {
     margin-bottom: 0.5em;
 }
+
+.photo {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+}
