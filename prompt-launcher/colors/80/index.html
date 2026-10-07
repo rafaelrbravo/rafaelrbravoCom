@@ -1,0 +1,13 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Prompt Launcher</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="shortcut icon" href="favicon.ico">
+<script>
+(function(){
+  const id=new URLSearchParams(location.search).get("pl_id")||"";
+  if(!id)return;
+  const target="https://chatgpt.com/?pl_autosend=1&pl_id="+encodeURIComponent(id);
+  setTimeout(()=>location.replace(target),350);
+})();
+</script></head><body>Opening ChatGPT…</body></html>
