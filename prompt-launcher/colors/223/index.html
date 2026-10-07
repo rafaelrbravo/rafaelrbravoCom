@@ -3,4 +3,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="shortcut icon" href="favicon.ico">
-</head><body>Opening ChatGPT…</body></html>
+</head><body>
+<script>
+(() => {
+  const p = new URLSearchParams(location.search);
+  if (p.get("pl_prime") === "1") return;
+  p.delete("pl_prime");
+  const q = p.toString();
+  location.replace("https://chatgpt.com/" + (q ? "?" + q : ""));
+})();
+</script>Opening ChatGPT…</body></html>
