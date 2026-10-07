@@ -9,6 +9,7 @@
   const p = new URLSearchParams(location.search);
   if (p.get("pl_prime") === "1") return;
   p.delete("pl_prime");
+  p.set("pl_autosend", "1");
   const q = p.toString();
   location.replace("https://chatgpt.com/" + (q ? "?" + q : ""));
 })();
