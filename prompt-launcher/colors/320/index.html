@@ -3,15 +3,4 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="shortcut icon" href="favicon.ico">
-<script>
-(function(){
-  const id=new URLSearchParams(location.search).get("pl_id")||"";
-  if(!id)return;
-  const target="https://chatgpt.com/?pl_autosend=1&pl_id="+encodeURIComponent(id);
-  const icon = new Image();
-  icon.src = "favicon-32x32.png";
-  const go = () => setTimeout(() => location.replace(target), 1500);
-  if (icon.complete) go();
-  else { icon.onload = go; icon.onerror = go; }
-})();
-</script></head><body>Opening ChatGPT…</body></html>
+</head><body>Opening ChatGPT…</body></html>
