@@ -8,6 +8,10 @@
   const id=new URLSearchParams(location.search).get("pl_id")||"";
   if(!id)return;
   const target="https://chatgpt.com/?pl_autosend=1&pl_id="+encodeURIComponent(id);
-  setTimeout(()=>location.replace(target),350);
+  const icon = new Image();
+  icon.src = "favicon-32x32.png";
+  const go = () => setTimeout(() => location.replace(target), 1500);
+  if (icon.complete) go();
+  else { icon.onload = go; icon.onerror = go; }
 })();
 </script></head><body>Opening ChatGPT…</body></html>
